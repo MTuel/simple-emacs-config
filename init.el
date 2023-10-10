@@ -309,7 +309,8 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
     '(org-level-3 ((t (:inherit outline-3 :height 1.25))))
     '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
     (set-face-attribute 'org-document-title nil :height 2.0))
-  (setq evil-auto-indent nil))
+  (setq evil-auto-indent nil)
+  (flyspell-mode 1))
 
 ;; Org
 ;; https://orgmode.org/
@@ -345,6 +346,18 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
   (org-roam-completion-everywhere t)
   :config
   (org-roam-setup))
+
+(setq ispell-dictionary "english")
+(setq ispell-local-dictionary-alist `(("english"
+				       "[[:alpha:]]"
+				       "[^[:alpha:]]"
+				       "[']"
+				       t
+				       ("-d" "en_US")
+				       nil
+				       utf-8)))
+
+(setq ispell-hunspell-dictionary-alist ispell-local-dictionary-alist)
 
 ;;
 ;;
