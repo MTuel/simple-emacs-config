@@ -1,0 +1,12 @@
+elpa/*
+auto-save-list/*
+backup/*
+transient/*
+url/*
+node_modules/*
+eln-cache/*
+blog-config.el
+bookmarks
+recentf
+org-roam.db
+.org-id-locations
