@@ -356,7 +356,14 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
   (org-roam-directory "~/Org/Roam/")
   (org-roam-completion-everywhere t)
   :config
-  (org-roam-setup))
+  (org-roam-setup)
+  (add-to-list 'display-buffer-alist
+             '("\\*org-roam\\*"
+               (display-buffer-in-direction)
+               (direction . right)
+               (window-width . 0.33)
+               (window-height . fit-window-to-buffer))))
+
 
 (setq ispell-dictionary "english")
 (setq ispell-local-dictionary-alist `(("english"
