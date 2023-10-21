@@ -150,6 +150,15 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
   :init
   (doom-modeline-mode 1))
 
+(use-package dimmer
+  :config
+   (dimmer-configure-which-key)
+   (dimmer-configure-helm)
+   (dimmer-configure-org)
+   (setq dimmer-fraction 0.50)
+   (dimmer-mode t))
+
+
 ;; Dashboard
 ;; https://github.com/emacs-dashboard/emacs-dashboard
 (use-package dashboard
@@ -376,7 +385,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
  '(minimap-window-location 'right)
  '(org-agenda-files '("~/Org/Tasks.org"))
  '(package-selected-packages
-   '(htmlize weblorg eglot company magit gruvbox-theme dashboard visual-fill-column org-bullets org-static-blog evil-collection general counsel ivy-rich which-key rainbow-delimiters beacon slime doom-modeline ivy evil-mode catppuccin-theme evil)))
+   '(dimmer htmlize weblorg eglot company magit gruvbox-theme dashboard visual-fill-column org-bullets org-static-blog evil-collection general counsel ivy-rich which-key rainbow-delimiters beacon slime doom-modeline ivy evil-mode catppuccin-theme evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
