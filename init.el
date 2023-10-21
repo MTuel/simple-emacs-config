@@ -67,6 +67,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
 ;; Set backup files to be stored in a separate directory.
 ;; Do this so the directories you work in don't get cluttered with backup files.
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosave" t)))
 
 ;;
 ;;
@@ -112,6 +113,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
   :init
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
+  (setq evil-respect-visual-line-mode t)
   :config
   (evil-mode 1)
   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
