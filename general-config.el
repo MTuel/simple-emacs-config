@@ -27,6 +27,8 @@
   "obcp" '(org-static-blog-create-post :which-key "org blog create post")
   "obcd" '(org-static-blog-create-draft :which-key "org blog create draft")
 
+  "oo" '(org-open-at-point :which-key "org open at point")
+
   "or" '(:ignore t :which-key "org roam")
   "orb" '(:ignore t :which-key "org roam buffer")
   "orbt" '(org-roam-buffer-toggle :which-key "org roam buffer toggle")
@@ -37,6 +39,7 @@
   "orn" '(:ignore t :which-key "org roam node")
   "ornf" '(org-roam-node-find :which-key "org roam node find")
   "orni" '(org-roam-node-insert :which-key "org roam node insert")
+  "ornn" '(org-roam-node-insert-now :which-key "org roam node now")
 
   "ot" '(org-todo :which-key "org todo")
   
