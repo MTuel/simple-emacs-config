@@ -364,6 +364,21 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
                (window-width . 0.33)
                (window-height . fit-window-to-buffer))))
 
+(use-package websocket
+    :after org-roam)
+
+(use-package org-roam-ui
+    :after org-roam ;; or :after org
+;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
+;;         a hookable mode anymore, you're advised to pick something yourself
+;;         if you don't care about startup time, use
+;;  :hook (after-init . org-roam-ui-mode)
+    :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
+
 
 (setq ispell-dictionary "english")
 (setq ispell-local-dictionary-alist `(("english"
@@ -394,7 +409,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
  '(minimap-window-location 'right)
  '(org-agenda-files '("~/Org/Tasks.org"))
  '(package-selected-packages
-   '(dimmer htmlize weblorg eglot company magit gruvbox-theme dashboard visual-fill-column org-bullets org-static-blog evil-collection general counsel ivy-rich which-key rainbow-delimiters beacon slime doom-modeline ivy evil-mode catppuccin-theme evil)))
+   '(org-roam-ui websocket dimmer htmlize weblorg eglot company magit gruvbox-theme dashboard visual-fill-column org-bullets org-static-blog evil-collection general counsel ivy-rich which-key rainbow-delimiters beacon slime doom-modeline ivy evil-mode catppuccin-theme evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
