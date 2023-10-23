@@ -33,7 +33,7 @@
   "oo" '(org-open-at-point :which-key "org open at point")
 
   "or" '(:ignore t :which-key "org roam")
-  "ora" '(:ignore t :which-key "org roam agenda refresh")
+  "ora" '(my/org-roam-refresh-agenda-list :which-key "org roam agenda refresh")
   "orb" '(:ignore t :which-key "org roam buffer")
   "orbt" '(org-roam-buffer-toggle :which-key "org roam buffer toggle")
   "orbt" '(org-roam-buffer-refresh :which-key "org roam buffer refresh")
