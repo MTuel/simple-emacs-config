@@ -276,6 +276,8 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
   ([remap describe-key] . helpful-key))
 
 (use-package eglot
+  :commands (eglot eglot-ensure)
+  :hook ((csharp-mode . eglot-ensure))
   ;; Configure hooks to automatically turn-on eglot for selected modes
   ; :hook
   ; (((python-mode ruby-mode elixir-mode) . eglot))
@@ -287,8 +289,13 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
   (fset #'jsonrpc--log-event #'ignore)  ; massive perf boost---don't log every event
   ;; Sometimes you need to tell Eglot where to find the language server
   ; (add-to-list 'eglot-server-programs
-  ;              '(haskell-mode . ("haskell-language-server-wrapper" "--lsp")))
-)
+					;              '(haskell-mode . ("haskell-language-server-wrapper" "--lsp")))
+  (add-to-list 'eglot-server-programs
+             '(csharp-mode . ("csharp-ls"))))
+
+(use-package project
+  :config
+  (setq project-vc-extra-root-markers '("pom.xml" "*.csproj")))
 
 ;; Company
 ;; https://company-mode.github.io/
