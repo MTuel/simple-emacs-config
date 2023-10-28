@@ -308,8 +308,8 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
   (unless (file-exists-p "~/Org/Archive/Archive.org")
     (dired-create-empty-file "~/Org/Archive/Archive.org"))
 
-  (unless (file-exists-p "~/Org/Tasks.org")
-    (dired-create-empty-file "~/Org/Tasks.org"))
+  (unless (file-exists-p "~/Org/Inbox.org")
+    (dired-create-empty-file "~/Org/Inbox.org"))
 )
 
 (setup-org-directory-and-files)
@@ -337,7 +337,9 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
   (setq org-archive-location "~/Org/Archive/Archive.org")
   (setq org-agenda-start-with-log-mode t)
   (setq org-log-done 'time)
-  (setq org-log-into-drawer t))
+  (setq org-log-into-drawer t)
+  (setq-default org-todo-keywords
+                '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))))
 
 (use-package org-bullets
   :after org

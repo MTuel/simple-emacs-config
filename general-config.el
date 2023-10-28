@@ -28,7 +28,7 @@
   "obcd" '(org-static-blog-create-draft :which-key "org blog create draft")
 
   "ou" '(:ignore t :which-key "org update")
-  "ous" '(:ignore t :which-key "org update statistics")
+  "ous" '(org-update-statistics-cookies :which-key "org update statistics")
 
   "oo" '(org-open-at-point :which-key "org open at point")
 
