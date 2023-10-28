@@ -164,15 +164,6 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
   :init
   (doom-modeline-mode 1))
 
-(use-package dimmer
-  :config
-   (dimmer-configure-which-key)
-   (dimmer-configure-helm)
-   (dimmer-configure-org)
-   (setq dimmer-fraction 0.50)
-   (dimmer-mode t))
-
-
 ;; Dashboard
 ;; https://github.com/emacs-dashboard/emacs-dashboard
 (use-package dashboard
@@ -276,19 +267,20 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
   ([remap describe-key] . helpful-key))
 
 (use-package eglot
-  ;; Configure hooks to automatically turn-on eglot for selected modes
-  ; :hook
-  ; (((python-mode ruby-mode elixir-mode) . eglot))
-
+  :commands
+  (eglot eglot-ensure)
+  
+  :hook
+  ((csharp-mode . eglot-ensure))
+  
   :custom
   (eglot-send-changes-idle-time 0.1)
 
   :config
   (fset #'jsonrpc--log-event #'ignore)  ; massive perf boost---don't log every event
   ;; Sometimes you need to tell Eglot where to find the language server
-  ; (add-to-list 'eglot-server-programs
-  ;              '(haskell-mode . ("haskell-language-server-wrapper" "--lsp")))
-)
+    (add-to-list 'eglot-server-programs
+             '(csharp-mode . ("csharp_ls"))))
 
 ;; Company
 ;; https://company-mode.github.io/
@@ -514,7 +506,7 @@ capture was not aborted."
  '(minimap-window-location 'right)
  '(org-agenda-files '("~/Org/Tasks.org"))
  '(package-selected-packages
-   '(org-roam-ui websocket dimmer htmlize weblorg eglot company magit gruvbox-theme dashboard visual-fill-column org-bullets org-static-blog evil-collection general counsel ivy-rich which-key rainbow-delimiters beacon slime doom-modeline ivy evil-mode catppuccin-theme evil)))
+   '(org-roam-ui websocket htmlize weblorg eglot company magit gruvbox-theme dashboard visual-fill-column org-bullets org-static-blog evil-collection general counsel ivy-rich which-key rainbow-delimiters beacon slime doom-modeline ivy evil-mode catppuccin-theme evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
