@@ -32,10 +32,10 @@
     (set-face-attribute 'org-document-title nil :height 2.0))
   (setq evil-auto-indent nil)
   (setq org-hide-emphasis-markers t)
-  (flyspell-mode 1)
-  (font-lock-add-keywords 'org-mode
-			'(("^ *\\([-]\\) "
-			    (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•")))))))
+  (flyspell-mode 1))
+  ;;(font-lock-add-keywords 'org-mode
+			;;'(("^ *\\([-]\\) "
+			    ;;(0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•")))))))
 
 ;; Org
 ;; https://orgmode.org/
@@ -51,11 +51,11 @@
   (setq-default org-todo-keywords
                 '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))))
 
-(use-package org-bullets
-  :after org
-  :hook (org-mode . org-bullets-mode)
-  :custom
-  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
+;;(use-package org-bullets
+;;  :after org
+;;  :hook (org-mode . org-bullets-mode)
+;;  :custom
+;;  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
 (defun my/org-mode-visual-fill ()
   (setq visual-fill-column-width 100
@@ -65,17 +65,17 @@
 (use-package visual-fill-column
   :hook (org-mode . my/org-mode-visual-fill))
 
-(use-package org-fragtog
-    :after org
-    :custom
-    (org-startup-with-latex-preview t)
-    :hook
-    (org-mode . org-fragtog-mode)
-    :custom
-    (org-format-latex-options
-     (plist-put org-format-latex-options :scale 2)
-     (plist-put org-format-latex-options :foreground 'auto)
-     (plist-put org-format-latex-options :background 'auto)))
+;;(use-package org-fragtog
+;;    :after org
+;;    :custom
+;;    (org-startup-with-latex-preview t)
+;;    :hook
+;;    (org-mode . org-fragtog-mode)
+;;    :custom
+;;    (org-format-latex-options
+;;     (plist-put org-format-latex-options :scale 2)
+;;     (plist-put org-format-latex-options :foreground 'auto)
+;;     (plist-put org-format-latex-options :background 'auto)))
 
 (use-package org-appear
     :hook
@@ -83,11 +83,7 @@
 
 (use-package org-modern
     :hook
-    (org-mode . global-org-modern-mode)
-    :custom
-    (org-modern-keyword nil)
-    (org-modern-checkbox nil)
-    (org-modern-table nil))
+    (org-mode . global-org-modern-mode))
 
 ;; Org Roam
 ;; https://www.orgroam.com/ 
