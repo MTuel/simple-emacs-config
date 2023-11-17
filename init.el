@@ -310,6 +310,19 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
 
 (setq ispell-hunspell-dictionary-alist ispell-local-dictionary-alist)
 
+;; Centaur Tabs
+;; https://github.com/ema2159/centaur-tabs
+(use-package centaur-tabs
+  :demand
+  :config
+  (centaur-tabs-mode t)
+  (centaur-tabs-headline-match)
+  (setq centaur-tabs-style "bar")
+  :bind
+  (:map evil-normal-state-map
+        ("g t" . centaur-tabs-forward)
+        ("g T" . centaur-tabs-backward)))
+
 ;;
 ;;
 ;; CUSTOM VARIABLES
@@ -327,7 +340,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
  '(minimap-window-location 'right)
  '(org-agenda-files '("~/Org/Tasks.org"))
  '(package-selected-packages
-   '(markdown-soma org-roam-ui websocket htmlize weblorg eglot company magit gruvbox-theme dashboard visual-fill-column org-bullets org-static-blog evil-collection general counsel ivy-rich which-key rainbow-delimiters beacon slime doom-modeline ivy evil-mode catppuccin-theme evil)))
+   '(centaur-tabs markdown-soma org-roam-ui websocket htmlize weblorg eglot company magit gruvbox-theme dashboard visual-fill-column org-bullets org-static-blog evil-collection general counsel ivy-rich which-key rainbow-delimiters beacon slime doom-modeline ivy evil-mode catppuccin-theme evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
