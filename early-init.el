@@ -6,3 +6,9 @@
 ;; Set the background color to match Gruvbox and prevent the typical flashbang to the eyes at startup.
 (add-to-list 'default-frame-alist '(foreground-color . "#EBDBB2"))
 (add-to-list 'default-frame-alist '(background-color . "#282828"))
+
+;;(setq gc-cons-threshold most-positive-fixnum)
+
+(setq load-prefer-newer noninteractive)
+
+
