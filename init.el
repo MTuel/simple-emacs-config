@@ -113,31 +113,14 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
 
 (load "~/.emacs.d/general-config.el")
 (load "~/.emacs.d/org-config.el")
+(load "~/.emacs.d/evil-config.el")
 
 ;;
 ;;
 ;; PACKAGE CONFIGURATIONS
 ;;
 ;;
-
-;; Evil for VIM keybindings.
-;; https://github.com/emacs-evil/evil
-(use-package evil
-  :init
-  (setq evil-want-integration t)
-  (setq evil-want-keybinding nil)
-  (setq evil-respect-visual-line-mode t)
-  :config
-  (evil-mode 1)
-  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join))
-
-;; Additional keybindings for evil.
-;; https://github.com/emacs-evil/evil-collection
-(use-package evil-collection
-  :after evil
-  :config
-  (evil-collection-init))
+(require 'evil-config)
 
 ;; Catppuccin for the theme.
 ;; https://github.com/catppuccin/emacs
@@ -289,7 +272,7 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
 ;; https://company-mode.github.io/
 (use-package company
   :config
-  (company-mode-on))
+  (company-mode))
 
 ;; SLIME (Superior Lisp Interaction Mode for Emacs)
 ;; I have it configured for Steel Bank Common Lisp (SBCL) http://www.sbcl.org/
