@@ -323,6 +323,8 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
         ("g t" . centaur-tabs-forward)
         ("g T" . centaur-tabs-backward)))
 
+(use-package weblorg)
+
 ;;
 ;;
 ;; CUSTOM VARIABLES

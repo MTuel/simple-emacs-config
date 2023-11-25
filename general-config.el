@@ -21,12 +21,6 @@
 
   "oa" '(org-agenda :which-key "org agenda")
   
-  "ob" '(:ignore t :which-key "org blog")
-  "obp" '(org-static-blog-publish :which-key "org blog publish")
-  "obc" '(:ignore t :which-key "org blog create")
-  "obcp" '(org-static-blog-create-post :which-key "org blog create post")
-  "obcd" '(org-static-blog-create-draft :which-key "org blog create draft")
-
   "ou" '(:ignore t :which-key "org update")
   "ous" '(org-update-statistics-cookies :which-key "org update statistics")
 
