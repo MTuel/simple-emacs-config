@@ -7,8 +7,4 @@
 (add-to-list 'default-frame-alist '(foreground-color . "#EBDBB2"))
 (add-to-list 'default-frame-alist '(background-color . "#282828"))
 
-;;(setq gc-cons-threshold most-positive-fixnum)
-
 (setq load-prefer-newer noninteractive)
-
-
