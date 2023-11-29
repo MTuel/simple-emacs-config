@@ -12,3 +12,6 @@ org-roam.db
 .org-id-locations
 server
 *.org#
+lisp/.#autocomplete-config.el
+#c!!Users!signu!.emacs.d!lisp!autocomplete-config.el#
+#c!!Users!signu!.emacs.d!lisp!autocomplete-config.el#

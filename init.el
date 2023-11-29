@@ -46,25 +46,8 @@
 (require 'autocomplete-config)
 (require 'org-config)
 (require 'lsp-config)
-
-;; SLIME (Superior Lisp Interaction Mode for Emacs)
-;; I have it configured for Steel Bank Common Lisp (SBCL) http://www.sbcl.org/
-(use-package slime
-  :init
-  (setq inferior-lisp-program "sbcl"))
-
-;; ispell/hunspell for spellcheck.
-(setq ispell-dictionary "english")
-(setq ispell-local-dictionary-alist `(("english"
-				       "[[:alpha:]]"
-				       "[^[:alpha:]]"
-				       "[']"
-				       t
-				       ("-d" "en_US")
-				       nil
-				       utf-8)))
-
-(setq ispell-hunspell-dictionary-alist ispell-local-dictionary-alist)
+(require 'slime-config)
+(require 'spellcheck-config)
 
 ;;
 ;;
