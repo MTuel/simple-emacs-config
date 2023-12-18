@@ -83,7 +83,10 @@
 
 (use-package org-modern
     :hook
-    (org-mode . global-org-modern-mode))
+    (org-mode . global-org-modern-mode)
+    :config
+    (setq org-modern-todo nil
+	  org-modern-checkbox nil))
 
 ;; Org Roam
 ;; https://www.orgroam.com/ 

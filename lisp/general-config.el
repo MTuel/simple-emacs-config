@@ -13,10 +13,16 @@
 
   (custom/leader-keys
     "rf" '(recentf-open-files :which-key "recentf open files")
+
+    "f" '(:ignore t :which-key "avy")
+    "fwa" '(avy-goto-word-0 :which-key "find word any")
+    "fws" '(avy-goto-word-1 :which-key "find word specific")
+    
     "b" '(:ignore t :which-key "buffer")
     "be" '(eval-buffer :which-key "evaluate buffer")
     "bs" '(counsel-switch-buffer :which-key "counsel switch buffer")
     "bk" '(kill-buffer :which-key "kill buffer")
+
 
     ;; Magit keys
     "m" '(:ignore t :which-key "magit")

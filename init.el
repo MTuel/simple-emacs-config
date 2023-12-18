@@ -42,6 +42,7 @@
 (require 'theme-config)
 (require 'evil-config)
 (require 'general-config)
+(require 'avy-config)
 (require 'which-key-config)
 (require 'autocomplete-config)
 (require 'org-config)
@@ -63,7 +64,7 @@
  '(custom-safe-themes
    '("61526419f6ffee91cae16a75bfc0f39f7e9621280cc405edeae15699091e7c73" "d445c7b530713eac282ecdeea07a8fa59692c83045bf84dd112dd738c7bcad1d" default))
  '(package-selected-packages
-   '(centaur-tabs org-roam-ui websocket htmlize weblorg eglot company gruvbox-theme dashboard visual-fill-column evil-collection general counsel ivy-rich which-key rainbow-delimiters beacon slime doom-modeline ivy evil-mode evil)))
+   '(avy centaur-tabs org-roam-ui websocket htmlize weblorg eglot company gruvbox-theme dashboard visual-fill-column evil-collection general counsel ivy-rich which-key rainbow-delimiters beacon slime doom-modeline ivy evil-mode evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
