@@ -18,17 +18,17 @@
     "fwa" '(avy-goto-word-0 :which-key "find word any")
     "fws" '(avy-goto-word-1 :which-key "find word specific")
     
+    ;; Buffer Manipulation
     "b" '(:ignore t :which-key "buffer")
     "be" '(eval-buffer :which-key "evaluate buffer")
     "bs" '(counsel-switch-buffer :which-key "counsel switch buffer")
     "bk" '(kill-buffer :which-key "kill buffer")
 
-
-    ;; Magit keys
+    ;; Magit
     "m" '(:ignore t :which-key "magit")
     "ms" '(magit-status :which-key "magit status")
 
-    ;; org-mode related keys.
+    ;; org-mode
     "o" '(:ignore t :which-key "org")
 
     "oa" '(org-agenda :which-key "org agenda")
@@ -53,6 +53,9 @@
 
     "oru" '(org-roam-ui-open :which-key "org roam ui open")
 
+    "os" `(:ignore :which-key "org subtree")
+    "osa" `(org-archive-subtree :which-key "org subtree archive")
+    
     "ot" '(org-todo :which-key "org todo")
 
     ;; slime related keys.

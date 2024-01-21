@@ -24,7 +24,9 @@
 (use-package dashboard
   :ensure t
   :config
-  (dashboard-setup-startup-hook))
+  (dashboard-setup-startup-hook)
+  (setq dashboard-startup-banner 'logo)
+  (setq dashboard-center-content t))
 
 (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
 

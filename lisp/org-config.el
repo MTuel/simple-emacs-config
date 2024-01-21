@@ -44,18 +44,12 @@
   :config
   (setq org-default-notes-file "~/Org/Notes.org")
   (setq org-agenda-files '("~/Org/" "~/Org/Tasks.org"))
-  (setq org-archive-location "~/Org/Archive/Archive.org")
+  (setq org-archive-location "~/Org/Archive/%s_archive::")
   (setq org-agenda-start-with-log-mode t)
   (setq org-log-done 'time)
   (setq org-log-into-drawer t)
   (setq-default org-todo-keywords
-                '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))))
-
-;;(use-package org-bullets
-;;  :after org
-;;  :hook (org-mode . org-bullets-mode)
-;;  :custom
-;;  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
+                '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "SOMEDAY(s)" "|" "DONE(d)" "CANCELLED(c)"))))
 
 (defun my/org-mode-visual-fill ()
   (setq visual-fill-column-width 100
@@ -64,18 +58,6 @@
 
 (use-package visual-fill-column
   :hook (org-mode . my/org-mode-visual-fill))
-
-;;(use-package org-fragtog
-;;    :after org
-;;    :custom
-;;    (org-startup-with-latex-preview t)
-;;    :hook
-;;    (org-mode . org-fragtog-mode)
-;;    :custom
-;;    (org-format-latex-options
-;;     (plist-put org-format-latex-options :scale 2)
-;;     (plist-put org-format-latex-options :foreground 'auto)
-;;     (plist-put org-format-latex-options :background 'auto)))
 
 (use-package org-appear
     :hook
