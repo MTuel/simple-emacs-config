@@ -20,5 +20,17 @@
 ;; https://company-mode.github.io/
 (use-package company
   :config
-  (company-mode))
+  (global-company-mode))
+
+;; Paredit
+(use-package paredit
+  :hook ((emacs-lisp-mode . enable-paredit-mode)
+	 (emacs-lisp-mode-hook . enable-paredit-mode)
+	 (eval-expression-minibuffer-setup-hook . enable-paredit-mode)
+	 (ielm-mode-hook . enable-paredit-mode)
+	 (lisp-mode-hook . enable-paredit-mode)
+	 (lisp-interaction-mode-hook . enable-paredit-mode)
+	 (scheme-mode-hook . enable-paredit-mode))
+  :config
+  (show-paren-mode t))
 
