@@ -62,5 +62,6 @@
     "s" '(:ignore t :which-key "slime")
     "se" '(:ignore t :which-key "slime eval")
     "seb" '(slime-eval-buffer :which-key "slime evaluate buffer")
-    "ser" '(slime-eval-region :which-key "slime evaluate region")
-    "sed" '(slime-eval-defun :which-key "slime evaluate defun")))
+    "sed" '(slime-eval-defun :which-key "slime evaluate defun")
+    "see" `(slime-eval-last-expression :which-key "slime evaluate expression")
+    "ser" '(slime-eval-region :which-key "slime evaluate region")))
