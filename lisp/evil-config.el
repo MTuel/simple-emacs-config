@@ -7,6 +7,9 @@
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
   (setq evil-respect-visual-line-mode t)
+  (setq evil-undo-system 'undo-redo)
+  (evil-ex-define-cmd "W" "w")
+  (evil-ex-define-cmd "Q" "q")
   :config
   (evil-mode 1)
   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
