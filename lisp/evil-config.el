@@ -8,12 +8,12 @@
   (setq evil-want-keybinding nil)
   (setq evil-respect-visual-line-mode t)
   (setq evil-undo-system 'undo-redo)
-  (evil-ex-define-cmd "W" "w")
-  (evil-ex-define-cmd "Q" "q")
   :config
   (evil-mode 1)
   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join))
+  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
+  (evil-ex-define-cmd "W" "w")
+  (evil-ex-define-cmd "Q" "q"))
 
 ;; Additional keybindings for evil.
 ;; https://github.com/emacs-evil/evil-collection
