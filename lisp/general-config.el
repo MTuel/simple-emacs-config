@@ -6,6 +6,7 @@
 ;; A better interface for defining keybinds.
 (use-package general
   :config
+
   (general-create-definer custom/leader-keys
     :keymaps '(normal insert visual emacs)
     :prefix "SPC"
@@ -15,8 +16,8 @@
     "rf" '(recentf-open-files :which-key "recentf open files")
 
     "f" '(:ignore t :which-key "avy")
-    "fwa" '(avy-goto-word-0 :which-key "find word any")
-    "fws" '(avy-goto-word-1 :which-key "find word specific")
+    "fa" '(avy-goto-word-0 :which-key "find any")
+    "fs" '(avy-goto-word-1 :which-key "find specific")
     
     ;; Buffer Manipulation
     "b" '(:ignore t :which-key "buffer")
