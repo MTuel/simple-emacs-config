@@ -54,15 +54,21 @@
 
     "oru" '(org-roam-ui-open :which-key "org roam ui open")
 
-    "os" `(:ignore :which-key "org subtree")
-    "osa" `(org-archive-subtree :which-key "org subtree archive")
+    "os" '(:ignore :which-key "org subtree")
+    "osa" '(org-archive-subtree :which-key "org subtree archive")
     
     "ot" '(org-todo :which-key "org todo")
 
     ;; slime related keys.
-    "s" '(:ignore t :which-key "slime")
-    "se" '(:ignore t :which-key "slime eval")
-    "seb" '(slime-eval-buffer :which-key "slime evaluate buffer")
-    "sed" '(slime-eval-defun :which-key "slime evaluate defun")
-    "see" `(slime-eval-last-expression :which-key "slime evaluate expression")
-    "ser" '(slime-eval-region :which-key "slime evaluate region")))
+    "s" '(:ignore t :which-key "sly")
+    "se" '(:ignore t :which-key "sly eval")
+    "seb" '(sly-eval-buffer :which-key "sly evaluate buffer")
+    "sed" '(sly-eval-defun :which-key "sly evaluate defun")
+    "see" '(sly-eval-last-expression :which-key "sly evaluate expression")
+    "ser" '(sly-eval-region :which-key "sly evaluate region"))
+
+  (general-define-key
+   :states 'normal
+   "M-k" 'markdown-move-list-item-up
+   "M-j" 'markdown-move-list-item-down
+   ))

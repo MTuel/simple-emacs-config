@@ -2,7 +2,9 @@
 
 This is a basic configuration setup for Emacs. It should work by just cloning the repository into `~/.emacs.d/`
 
-## Useful Resources (WIP)
+If you run into errors downloading the packages, try `M-x package-refresh-contents RET` and `package-install RET *package throwing the error*`
+
+## Useful Resources
 
 For Windows:
 
@@ -10,52 +12,60 @@ For Windows:
 
 ## Requirements (WIP)
 
+## Packages
 
-## Plugins (WIP)
+Sorted alphabetically, not in order of importance.
 
-### Theme and UI
+* [aggressive-indent](https://github.com/Malabarba/aggressive-indent-mode)
 
-* [catpuccin](https://github.com/catppuccin/emacs)
-
-* [doom-modeline](https://github.com/doom-modeline)
-
-    * Also [nerd-icons](https://github.com/rainstormstudio/nerd-icons.el) as a dependency for doom-modeline.
-
-* [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters)
-
+* [avy](https://github.com/abo-abo/avy)
+	
 * [beacon](https://github.com/Malabarba/beacon)
 
-### Keybinds
+* [centaur-tabs](https://github.com/ema2159/centaur-tabs)
+
+* [cider](https://github.com/clojure-emacs/cider)
+
+* [company](https://company-mode.github.io)
+
+* [dashboard](https://github.com/emacs-dashboard/emacs-dashboard)
+	
+* [display-line-numbers](https://www.emacswiki.org/emacs/LineNumbers)
+	
+* [doom-modeline](https://github.com/doom-modeline)
+
+	- Also [nerd-icons](https://github.com/rainstormstudio/nerd-icons.el) as a dependency for doom-modeline.
+
+* [eglot](https://github.com/joaotavora/eglot)
 
 * [emacs-evil](https://github.com/emacs-evil/evil)
 
-    * If evil mode doesn't automatically start then you can toggle it by typing `M-x evil-mode` twice.
-
 * [evil-collection](https://github.com/emacs-evil/evil-collection)
-
 
 * [general](https://github.com/notuid/general.el)
 
-    * General is a package that makes creating keybinds easier and consistent.
+* [gruvbox](https://github.com/ninrod/gruvbox-theme)
 
-### Autocomplete and Help Functionality
+* [helpful](https://github.com/Wilfred/helpful)
 
 * [ivy, counsel, & swiper](https://github.com/abo-abo/swiper)
 
 * [ivy-rich](https://github.com/Yevgnen/ivy-rich)
 
-* [which-key](https://github.com/justbur/emacs-which-key)
+* [markdown-mode](https://github.com/jrblevin/markdown-mode)
 
-* [helpful](https://github.com/Wilfred/helpful)
-
-### Org & Org Related
+* [org-appear](https://github.com/awth13/org-appear)
 
 * [org-mode](https://orgmode.com)
 
+* [org-modern](https://github.com/minad/org-modern)
+
 * [org-roam](https://github.com/org-roam/org-roam)
 
-* [org-static-blog](https://github.com/bastibe/org-static-blog)
+* [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters)
 
-* [org-bullets](https://github.com/sabof/org-bullets)
-
+* [sly](https://github.com/joaotavora/sly)
+	
 * [visual-fill-column](https://github.com/joostkremers/visual-fill-column)
+	
+* [which-key](https://github.com/justbur/emacs-which-key)

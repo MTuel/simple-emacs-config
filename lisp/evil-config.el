@@ -1,8 +1,5 @@
 (provide 'evil-config)
 
-(defun my/no-arrow-keys ()
-  "Stop using the arrow keys!")
-
 ;; Evil for VIM keybindings.
 ;; https://github.com/emacs-evil/evil
 (use-package evil
@@ -23,11 +20,6 @@
   ;; Map CTRL+h to behave like regular Vim/Neovim instead of pulling up the help menu in insert mode.
   (evil-define-key '(insert) custom-map "C-h" 'evil-delete-backward-char-and-join)
 
-  ;; Map H and L to mimic 0 and $ respectively for better ergonomics.
-  (evil-define-key '(normal visual) custom-map
-    "H" 'evil-beginning-of-visual-line
-    "L" 'evil-end-of-visual-line)
-
   (evil-ex-define-cmd "W" "w")
   (evil-ex-define-cmd "Q" "q"))
 
@@ -37,4 +29,3 @@
   :after evil
   :config
   (evil-collection-init))
-

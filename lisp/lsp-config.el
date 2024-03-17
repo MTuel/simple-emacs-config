@@ -1,5 +1,7 @@
 (provide 'lsp-config)
 
+;; Eglot
+;; https://github.com/joaotavora/eglot
 (use-package eglot
   :commands
   (eglot eglot-ensure)
