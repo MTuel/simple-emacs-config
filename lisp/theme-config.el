@@ -51,7 +51,7 @@
 (defun my/configure-custom-font ()
   "Set the font if it exists, otherwise ignore."
   (condition-case nil
-    (setq default-frame-alist '((font . "CaskaydiaCove NF 10")))
+    (setq default-frame-alist '((font . "CaskaydiaCove NF 12")))
     (error nil)))
 
 (my/configure-custom-font)
@@ -82,19 +82,3 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
     (display-line-numbers-mode)))
 
 (global-display-line-numbers-mode)
-
-;; Centaur Tabs
-;; https://github.com/ema2159/centaur-tabs
-(use-package centaur-tabs
-  :demand
-  :after
-  (evil)
-  :config
-  (centaur-tabs-mode t)
-  (centaur-tabs-headline-match)
-  (setq centaur-tabs-style "bar")
-  :bind
-  (:map evil-normal-state-map
-        ("g t" . centaur-tabs-forward)
-        ("g T" . centaur-tabs-backward)))
-
