@@ -37,3 +37,14 @@
 ;; Do this so the directories you work in don't get cluttered with backup files.
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
 (setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosave" t)))
+
+;; Easy command to kill all other buffers.
+(defun kill-other-buffers ()
+  "kill all other buffers except for the defaults."
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer)
+			   (delq (get-buffer "*Messages*")
+				 (delq (get-buffer "*dashboard*")
+				       (delq (get-buffer "*scratch*")
+					     (delq (get-buffer "*Warnings*")
+						   (buffer-list))))))))

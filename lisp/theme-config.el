@@ -51,7 +51,7 @@
 (defun my/configure-custom-font ()
   "Set the font if it exists, otherwise ignore."
   (condition-case nil
-    (setq default-frame-alist '((font . "CaskaydiaCove NF 12")))
+    (setq default-frame-alist '((font . "CaskaydiaCove NF 10")))
     (error nil)))
 
 (my/configure-custom-font)
