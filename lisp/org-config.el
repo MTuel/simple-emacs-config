@@ -15,8 +15,7 @@
     (dired-create-empty-file "~/Org/Archive/Archive.org"))
 
   (unless (file-exists-p "~/Org/Inbox.org")
-    (dired-create-empty-file "~/Org/Inbox.org"))
-)
+    (dired-create-empty-file "~/Org/Inbox.org")))
 
 (my/setup-org-directory-and-files)
  
@@ -48,6 +47,9 @@
   (setq org-agenda-start-with-log-mode t)
   (setq org-log-done 'time)
   (setq org-log-into-drawer t)
+  (setq org-export-with-toc nil)
+  (setq org-export-with-section-numbers nil)
+  (setq org-export-with-tags nil)
   (setq-default org-todo-keywords
                 '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "SOMEDAY(s)" "|" "DONE(d)" "CANCELLED(c)"))))
 
