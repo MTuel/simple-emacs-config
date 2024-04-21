@@ -24,11 +24,7 @@
     "be" '(eval-buffer :which-key "evaluate buffer")
     "bs" '(counsel-switch-buffer :which-key "counsel switch buffer")
     "bk" '(kill-buffer :which-key "kill buffer")
-
-    ;; Magit
-    "m" '(:ignore t :which-key "magit")
-    "ms" '(magit-status :which-key "magit status")
-
+    
     ;; org-mode
     "o" '(:ignore t :which-key "org")
 

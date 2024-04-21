@@ -2,9 +2,14 @@
 
 ;; Gruvbox for change of pace every now and then.
 ;; https://github.com/greduan/emacs-theme-gruvbox
-(use-package gruvbox-theme
+;;(use-package gruvbox-theme
+;;  :init
+;;  (load-theme 'gruvbox :no-confirm))
+
+;; OneDark Theme
+(use-package atom-one-dark-theme
   :init
-  (load-theme 'gruvbox :no-confirm))
+  (load-theme 'atom-one-dark :no-confirm))
 
 ;; Nerd Icons
 ;; https://github.com/rainstormstudio/nerd-icons.el#installing-fonts
