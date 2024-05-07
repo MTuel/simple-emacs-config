@@ -36,7 +36,8 @@
 ;; Set backup files to be stored in a separate directory.
 ;; Do this so the directories you work in don't get cluttered with backup files.
 (setq backup-directory-alist '(("." . "~/.config/emacs/backup")))
-(setq auto-save-file-name-transforms '((".*" "~/.config/emacs.d/autosave" t)))
+(setq auto-save-file-name-transforms '((".*" "~/.config/emacs/autosave" t)))
+
 
 ;; Easy command to kill all other buffers.
 (defun kill-other-buffers ()
