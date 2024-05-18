@@ -87,3 +87,9 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
     (display-line-numbers-mode)))
 
 (global-display-line-numbers-mode)
+
+;; hl-todo
+;; https://github.com/tarsius/hl-todo?tab=readme-ov-file
+(use-package hl-todo
+  :init
+  (hl-todo-mode))
