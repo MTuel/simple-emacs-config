@@ -92,4 +92,13 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
 ;; https://github.com/tarsius/hl-todo?tab=readme-ov-file
 (use-package hl-todo
   :init
-  (hl-todo-mode))
+  (global-hl-todo-mode)
+  :config
+  (setq hl-todo-keyword-faces
+	'(("TODO" . "#61AFEF")
+	  ("NOTE" . "#56B6C2")
+	  ("WARNING" . "#E5C07B")
+	  ("FIX" . "#E06C75")))
+  ;; NOTE: Sets whether or not the color is applied to the foreground (nil) or background (t) of the text.
+  (setq hl-todo-color-background nil)
+  (setq hl-todo-highlight-punctuation ""))
