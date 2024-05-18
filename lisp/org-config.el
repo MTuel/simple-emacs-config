@@ -5,6 +5,9 @@
   (unless (file-directory-p "~/Org/")
     (make-directory "~/Org/"))
 
+  (unless (file-directory-p "~/Org/Pictures")
+    (make-directory "~/Org/Pictures"))
+
   (unless (file-directory-p "~/Org/Roam/")
     (make-directory "~/Org/Roam/"))
 
@@ -196,3 +199,7 @@ capture was not aborted."
         org-roam-ui-open-on-start t))
 
 (use-package org-preview-html)
+
+(use-package org-download
+  :config
+  (setq-default org-download-image-dir "~/Org/Pictures/"))

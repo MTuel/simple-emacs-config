@@ -43,11 +43,11 @@
 (require 'editing-modes)
 (require 'evil-config)
 (require 'general-config)
-(require 'which-key-config)
 (require 'autocomplete-config)
 (require 'org-config)
 (require 'lsp-config)
 (require 'spellcheck-config)
+(require 'miscellaneous-package-configs)
 
 ;;
 ;;
