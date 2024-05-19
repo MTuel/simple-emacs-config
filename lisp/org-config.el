@@ -1,24 +1,24 @@
 (provide 'org-config)
 
+(defun my/safe-setup-directory (name)
+  "Setup a directory if it doesn't exist."
+  (unless (file-directory-p name)
+    (make-directory name)))
+
+(defun my/safe-setup-file (name)
+  "Setup a file if it doesn't exist."
+  (unless (file-exists-p name)
+    (dired-create-empty-file name)))
+
 (defun my/setup-org-directory-and-files ()
   "Setup Org files and directories if they don't exist."
-  (unless (file-directory-p "~/Org/")
-    (make-directory "~/Org/"))
 
-  (unless (file-directory-p "~/Org/Pictures")
-    (make-directory "~/Org/Pictures"))
-
-  (unless (file-directory-p "~/Org/Roam/")
-    (make-directory "~/Org/Roam/"))
-
-  (unless (file-directory-p "~/Org/Archive/")
-    (make-directory "~/Org/Archive/"))
-
-  (unless (file-exists-p "~/Org/Archive/Archive.org")
-    (dired-create-empty-file "~/Org/Archive/Archive.org"))
-
-  (unless (file-exists-p "~/Org/Inbox.org")
-    (dired-create-empty-file "~/Org/Inbox.org")))
+  (my/safe-setup-directory "~/Org/")
+  (my/safe-setup-directory "~/Org/Pictures")
+  (my/safe-setup-directory "~/Org/Roam")
+  (my/safe-setup-directory "~/Org/Archive")
+  (my/safe-setup-file "~/Org/Archive/Archive.org")
+  (my/safe-setup-file "~/Org/Inbox.org"))
 
 (my/setup-org-directory-and-files)
  
