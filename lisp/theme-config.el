@@ -7,9 +7,11 @@
 ;;  (load-theme 'gruvbox :no-confirm))
 
 ;; OneDark Theme
-(use-package atom-one-dark-theme
-  :init
-  (load-theme 'atom-one-dark :no-confirm))
+
+(when window-system
+  (use-package atom-one-dark-theme
+    :init
+    (load-theme 'atom-one-dark :no-confirm)))
 
 ;; Nerd Icons
 ;; https://github.com/rainstormstudio/nerd-icons.el#installing-fonts
