@@ -203,3 +203,5 @@ capture was not aborted."
 (use-package org-download
   :config
   (setq-default org-download-image-dir "~/Org/Pictures/"))
+
+(use-package org-web-tools)
