@@ -6,7 +6,7 @@
 ;; A better interface for defining keybinds.
 (use-package general
   :config
-
+  (general-evil-setup)
   (general-create-definer custom/leader-keys
     :keymaps '(normal insert visual emacs)
     :prefix "SPC"
@@ -68,13 +68,23 @@
    "M-k" 'markdown-move-list-item-up
    "M-j" 'markdown-move-list-item-down)
 
-  (general-define-key
-   :states 'insert
-   "jk" 'evil-normal-state
-   "kj" 'evil-normal-state)
+  (general-imap "j"
+    (general-key-dispatch 'self-insert-command
+      :timeout 0.25
+      "k" 'evil-normal-state))
 
-  (general-define-key
-   :states 'visual
-   "jk" 'evil-normal-state
-   "kj" 'evil-normal-state
-   ))
+  (general-imap "k"
+    (general-key-dispatch 'self-insert-command
+      :timeout 0.25
+      "k" 'evil-normal-state))
+  
+  ;; (general-vmap "k"
+  ;;   (general-key-dispatch 'self-insert-command
+  ;;     :timeout 0.25
+  ;;     "j" 'evil-normal-state))
+
+  ;; (general-vmap "k"
+  ;;   (general-key-dispatch 'self-insert-command
+  ;;     :timeout 0.25
+  ;;     "j" 'evil-normal-state))
+  )
