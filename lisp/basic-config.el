@@ -6,9 +6,9 @@
 
 ;; Remove the toolbar, menu, and scroll bars. Set these to 1 or comment them out to add them back. 
 ;; Each of these is a function, and we pass in the parameter of '-1' to disable them.
+(tool-bar-mode -1)
 
 (when window-system
-  (tool-bar-mode -1)
   (menu-bar-mode -1)
   (scroll-bar-mode -1))
 

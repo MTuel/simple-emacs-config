@@ -37,12 +37,15 @@
 
     "or" '(:ignore t :which-key "org roam")
     "ora" '(my/org-roam-refresh-agenda-list :which-key "org roam agenda refresh")
+
     "orb" '(:ignore t :which-key "org roam buffer")
     "orbt" '(org-roam-buffer-toggle :which-key "org roam buffer toggle")
     "orbt" '(org-roam-buffer-refresh :which-key "org roam buffer refresh")
     "orc" '(org-roam-capture :which-key "org roam capture")
+
     "ord" '(:ignore t :which-key "org roam dailies")
     "ordc" '(org-roam-dailies-capture-today :which-key "org roam dailies capture today")
+
     "orn" '(:ignore t :which-key "org roam node")
     "ornf" '(org-roam-node-find :which-key "org roam node find")
     "orni" '(org-roam-node-insert :which-key "org roam node insert")
@@ -77,14 +80,19 @@
     (general-key-dispatch 'self-insert-command
       :timeout 0.25
       "k" 'evil-normal-state))
-  
-  ;; (general-vmap "k"
+
+  (general-imap "C-g" 'evil-normal-state)
+  (general-vmap "C-g" 'evil-normal-state)
+
+  (general-vmap "<SPC>/" 'comment-or-uncomment-region)
+
+  ;; (general-vmap "j"
   ;;   (general-key-dispatch 'self-insert-command
   ;;     :timeout 0.25
-  ;;     "j" 'evil-normal-state))
+  ;;     "k" 'evil-normal-state))
 
   ;; (general-vmap "k"
   ;;   (general-key-dispatch 'self-insert-command
   ;;     :timeout 0.25
-  ;;     "j" 'evil-normal-state))
+  ;;     "k" 'evil-normal-state))
   )
