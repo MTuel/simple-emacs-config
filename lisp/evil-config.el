@@ -8,6 +8,7 @@
   (setq evil-want-keybinding nil)
   (setq evil-respect-visual-line-mode t)
   (setq evil-undo-system 'undo-redo)
+  (setq evil-want-C-i-jump nil)
 
   :config
 
