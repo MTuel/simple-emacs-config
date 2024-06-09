@@ -20,6 +20,9 @@
 ;; downloaded font on Windows.
 (use-package nerd-icons)
 
+(use-package all-the-icons
+  :if (display-graphic-p))
+
 ;; Doom Modeline for a cleaner modeline.
 ;; https://github.com/seagle0128/doom-modeline
 (use-package doom-modeline
