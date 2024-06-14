@@ -40,6 +40,12 @@
 (setq backup-directory-alist '(("." . "~/.config/emacs/backup")))
 (setq auto-save-file-name-transforms '((".*" "~/.config/emacs/autosave" t)))
 
+;; Enable the hide/show mode for folds.
+(defun custom-hide-all()
+  (interactive)
+  (hs-minor-mode)
+  (hs-hide-all))
+(add-hook 'prog-mode-hook 'custom-hide-all)
 
 ;; Easy command to kill all other buffers.
 (defun kill-other-buffers ()
