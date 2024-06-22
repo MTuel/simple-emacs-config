@@ -5,3 +5,5 @@
 (use-package hammy
   :init
   (hammy-mode))
+
+(use-package speed-type)

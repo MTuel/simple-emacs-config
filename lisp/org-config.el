@@ -27,20 +27,15 @@
   (variable-pitch-mode -1)
   (visual-line-mode 1)
   (custom-set-faces
-    '(org-level-1 ((t (:inherit outline-1 :height 1.75))))
-    '(org-level-2 ((t (:inherit outline-2 :height 1.5))))
-    '(org-level-3 ((t (:inherit outline-3 :height 1.25))))
-    '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
-    (set-face-attribute 'org-document-title nil :height 2.0))
+   '(org-level-1 ((t (:inherit outline-1 :height 1.75))))
+   '(org-level-2 ((t (:inherit outline-2 :height 1.5))))
+   '(org-level-3 ((t (:inherit outline-3 :height 1.25))))
+   '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
+   (set-face-attribute 'org-document-title nil :height 2.0))
   (setq evil-auto-indent nil)
   (setq org-hide-emphasis-markers t)
   (flyspell-mode 1))
-  ;;(font-lock-add-keywords 'org-mode
-			;;'(("^ *\\([-]\\) "
-			    ;;(0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•")))))))
 
-;; Org
-;; https://orgmode.org/
 (use-package org
   :hook (org-mode . my/org-mode-setup)
   :config
@@ -64,16 +59,16 @@
 (use-package visual-fill-column
   :hook (org-mode . my/org-mode-visual-fill))
 
-(use-package org-appear
-    :hook
-    (org-mode . org-appear-mode))
+;; (use-package org-appear
+;;     :hook
+;;     (org-mode . org-appear-mode))
 
 (use-package org-modern
-    :hook
-    (org-mode . global-org-modern-mode)
-    :config
-    (setq org-modern-todo nil
-	  org-modern-checkbox nil))
+  :hook
+  (org-mode . global-org-modern-mode)
+  :config
+  (setq org-modern-todo nil
+	org-modern-checkbox nil))
 
 ;; Org Roam
 ;; https://www.orgroam.com/ 

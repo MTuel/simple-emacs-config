@@ -61,16 +61,17 @@
 (defun my/configure-custom-font ()
   "Set the font if it exists, otherwise ignore."
   (condition-case nil
-    (setq default-frame-alist '((font . "CaskaydiaCove NF 10")))
-    (error nil)))
+      (setq default-frame-alist '((font . "CaskaydiaCove NF 10")))
+    (error nil))
+  (set-face-attribute 'italic nil :slant 'italic :underline 'unspecified))
 
 (my/configure-custom-font)
 
 (if (daemonp)
-  (add-hook 'after-make-frame-functions
-    (lambda (frame)
-      (with-selected-frame frame
-	(my/configure-custom-font)))))
+    (add-hook 'after-make-frame-functions
+	      (lambda (frame)
+		(with-selected-frame frame
+		  (my/configure-custom-font)))))
 
 ;; Set line numbers to display.
 ;; https://www.emacswiki.org/emacs/LineNumbers
