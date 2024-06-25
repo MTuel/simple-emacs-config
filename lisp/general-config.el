@@ -30,6 +30,10 @@
 
     "oa" '(org-agenda :which-key "org agenda")
 
+    "ol" '(:ignore t :which-key "org link")
+    "ole" '(org-insert-link :which-key "org link external")
+    "oli" '(counsel-org-link :which-key "org link internal")
+
     "ou" '(:ignore t :which-key "org update")
     "ous" '(org-update-statistics-cookies :which-key "org update statistics")
 
