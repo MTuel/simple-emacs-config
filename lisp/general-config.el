@@ -22,7 +22,7 @@
     ;; Buffer Manipulation
     "b" '(:ignore t :which-key "buffer")
     "be" '(eval-buffer :which-key "evaluate buffer")
-    "bs" '(counsel-switch-buffer :which-key "counsel switch buffer")
+    "bs" '(ido-switch-buffer :which-key "counsel switch buffer")
     "bk" '(kill-buffer :which-key "kill buffer")
     
     ;; org-mode
