@@ -45,7 +45,8 @@
   (interactive)
   (hs-minor-mode)
   (hs-hide-all))
-(add-hook 'prog-mode-hook 'custom-hide-all)
+
+;;(add-hook 'prog-mode-hook 'custom-hide-all)
 
 ;; Easy command to kill all other buffers.
 (defun kill-other-buffers ()

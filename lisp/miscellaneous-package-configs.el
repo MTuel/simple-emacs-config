@@ -7,3 +7,5 @@
   (hammy-mode))
 
 (use-package speed-type)
+
+(use-package keycast)

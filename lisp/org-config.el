@@ -84,7 +84,7 @@
   (require 'org-roam-dailies) ;; Ensure the keymap is available
   (org-roam-db-autosync-mode))
 
-(defun org-roam-node-insert-now (arg &rest args)
+(defun my/org-roam-node-insert-now (arg &rest args)
   (interactive "P")
   (let ((args (push arg args))
         (org-roam-capture-templates (list (append (car org-roam-capture-templates)
@@ -200,3 +200,7 @@ capture was not aborted."
   (setq-default org-download-image-dir "~/Org/Pictures/"))
 
 (use-package org-web-tools)
+
+;; (use-package typo
+;;   :hook
+;;   (org-mode . 'typo-mode))
