@@ -73,3 +73,15 @@
   :init (which-key-mode)
   :diminish which-key-mode
   :config (setq which-key-idle-delay 0.3))
+
+;; Company
+;; https://company-mode.github.io/
+(use-package company
+  :config
+  (global-company-mode))
+
+;; Aggressive Indent
+;; https://github.com/Malabarba/aggressive-indent-mode
+(use-package aggressive-indent
+  :init
+  (global-aggressive-indent-mode))

@@ -9,3 +9,9 @@
 (use-package speed-type)
 
 (use-package keycast)
+
+(use-package pdf-tools)
+
+(use-package nov
+  :init
+  (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
