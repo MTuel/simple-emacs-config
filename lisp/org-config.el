@@ -62,6 +62,22 @@
 ;; (use-package org-appear
 ;;     :hook
 ;;     (org-mode . org-appear-mode))
+(defun my/set-creation-date-heading-property ()
+  (interactive)
+  (save-excursion
+    (org-back-to-heading)
+    (unless (member "CREATED" org-entry-properties)
+      (org-set-property "CREATED" (format-time-string "%Y-%m-%d %T")))))
+
+(defun my/org-mode-date-heading-on ()
+  "Turn on heading creation date property"
+  (interactive)
+  (add-hook 'org-insert-heading-hook #'my/set-creation-date-heading-property))
+
+(defun my/org-mode-date-heading-off ()
+  "Turn off heading creation date property"
+  (interactive)
+  (remove-hook 'org-insert-heading-hook #'my/set-creation-date-heading-property))
 
 (use-package org-modern
   :hook

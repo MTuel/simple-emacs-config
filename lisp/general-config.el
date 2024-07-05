@@ -72,6 +72,10 @@
 
   (general-define-key
    :states 'normal
+   "-" 'dired-jump)
+
+  (general-define-key
+   :states 'normal
    "M-k" 'markdown-move-list-item-up
    "M-j" 'markdown-move-list-item-down)
 

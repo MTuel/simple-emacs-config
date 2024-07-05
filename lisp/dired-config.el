@@ -9,8 +9,10 @@
   :bind (("C-x C-j" . dired-jump))
   :config
   (evil-collection-define-key 'normal 'dired-mode-map
-    "h" 'dired-single-up-directory
-    "l" 'dired-single-buffer))
+    "-" 'dired-single-up-directory
+    "enter" 'dired-single-buffer)
+  (setq dired-omit-mode nil)
+  (setq dired-omit-files nil))
 
 ;; This adds icons to dired.
 (use-package all-the-icons-dired
@@ -22,3 +24,16 @@
   :config
   (evil-collection-define-key 'normal 'dired-mode-map
     "H" 'dired-hide-dotfiles-mode))
+
+(use-package dired-preview
+  :config
+  (dired-preview-global-mode)
+  (setq dired-preview-delay 0.3))
+
+(defun my/dired-preview-to-the-right ()
+  "My preferred `dired-preview-display-action-alist-function'."
+  '((display-buffer-in-direction)
+    (side . right)
+    (width . 0.7)))
+
+(setq dired-preview-display-action-alist-function #'my/dired-preview-to-the-right)
