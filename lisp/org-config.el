@@ -17,11 +17,10 @@
   (my/safe-setup-directory "~/Org/Pictures")
   (my/safe-setup-directory "~/Org/Roam")
   (my/safe-setup-directory "~/Org/Archive")
-  (my/safe-setup-file "~/Org/Archive/Archive.org")
-  (my/safe-setup-file "~/Org/Inbox.org"))
+  (my/safe-setup-file "~/Org/Archive/Archive.org"))
 
 (my/setup-org-directory-and-files)
- 
+
 (defun my/org-mode-setup ()
   (org-indent-mode 1)
   (variable-pitch-mode -1)
@@ -34,6 +33,7 @@
    (set-face-attribute 'org-document-title nil :height 2.0))
   (setq evil-auto-indent nil)
   (setq org-hide-emphasis-markers t)
+  (setq org-log-into-drawer t)
   (flyspell-mode 1))
 
 (use-package org
@@ -59,9 +59,6 @@
 (use-package visual-fill-column
   :hook (org-mode . my/org-mode-visual-fill))
 
-;; (use-package org-appear
-;;     :hook
-;;     (org-mode . org-appear-mode))
 (defun my/set-creation-date-heading-property ()
   (interactive)
   (save-excursion
@@ -78,6 +75,8 @@
   "Turn off heading creation date property"
   (interactive)
   (remove-hook 'org-insert-heading-hook #'my/set-creation-date-heading-property))
+
+;; (my/org-mode-date-heading-on)
 
 (use-package org-modern
   :hook
@@ -98,7 +97,10 @@
   (org-roam-completion-everywhere t)
   :config
   (require 'org-roam-dailies) ;; Ensure the keymap is available
-  (org-roam-db-autosync-mode))
+  (org-roam-db-autosync-mode)
+  (setq org-roam-node-display-template
+	(concat "${title:*} "
+		(propertize "${tags:10}" 'face 'org-tag))))
 
 (defun my/org-roam-node-insert-now (arg &rest args)
   (interactive "P")
@@ -217,6 +219,4 @@ capture was not aborted."
 
 (use-package org-web-tools)
 
-;; (use-package typo
-;;   :hook
-;;   (org-mode . 'typo-mode))
+(use-package org-ql)
