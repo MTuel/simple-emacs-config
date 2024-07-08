@@ -76,7 +76,7 @@
   ;; package.
   (marginalia-mode))
 
-(use-package consult)
+;;(use-package consult)
 
 ;; WhichKey
 ;; https://github.com/justbur/emacs-which-key
