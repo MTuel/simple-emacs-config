@@ -103,7 +103,12 @@
                    :immediate-finish nil
                    :kill-buffer t
                    :jump-to-captured t
-		   :keywords "project"))))
+		   :keywords "project"))
+
+    (add-to-list 'org-capture-templates
+		 '("i" "Inbox" entry (file+olp "~/Org/Inbox.org" "Inbox")
+		   "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1))))
+
 
 ;; (defun my/org-roam-filter-by-tag (tag-name)
 ;;   (lambda (node)
