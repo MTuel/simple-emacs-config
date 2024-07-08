@@ -39,23 +39,10 @@
 
     "oo" '(org-open-at-point :which-key "org open at point")
 
-    "or" '(:ignore t :which-key "org roam")
-    "ora" '(my/org-roam-refresh-agenda-list :which-key "org roam agenda refresh")
-
-    "orb" '(:ignore t :which-key "org roam buffer")
-    "orbt" '(org-roam-buffer-toggle :which-key "org roam buffer toggle")
-    "orbt" '(org-roam-buffer-refresh :which-key "org roam buffer refresh")
-    "orc" '(org-roam-capture :which-key "org roam capture")
-
-    "ord" '(:ignore t :which-key "org roam dailies")
-    "ordc" '(org-roam-dailies-capture-today :which-key "org roam dailies capture today")
-
-    "orn" '(:ignore t :which-key "org roam node")
-    "ornf" '(org-roam-node-find :which-key "org roam node find")
-    "orni" '(org-roam-node-insert :which-key "org roam node insert")
-    "ornn" '(org-roam-node-insert-now :which-key "org roam node now")
-
-    "oru" '(org-roam-ui-open :which-key "org roam ui open")
+    "od" '(:ignore t :which-key "org denote")
+    "odc" '(denote-open-or-create :which-key "org denote capture")
+    "odl" '(denote-link :which-key "org denote link")
+    "odr" '(denote-rename-file :which-key "org denote rename")
 
     "os" '(:ignore :which-key "org subtree")
     "osa" '(org-archive-subtree :which-key "org subtree archive")
