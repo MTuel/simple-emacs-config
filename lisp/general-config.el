@@ -17,14 +17,19 @@
 
     ;; Buffer Manipulation
     "b" '(:ignore t :which-key "buffer")
-    "be" '(eval-buffer :which-key "evaluate buffer")
-    "bs" '(ido-switch-buffer :which-key "counsel switch buffer")
-    "bk" '(kill-buffer :which-key "kill buffer")
+    "be" '(eval-buffer :which-key "buffer evaluate")
+    "bs" '(consult-buffer :which-key "buffer switch")
+    "bk" '(ido-kill-buffer :which-key "buffer kill")
 
-    "f" '(:ignore t :which-key "avy")
-    "fa" '(avy-goto-word-0 :which-key "find any")
-    "fs" '(avy-goto-word-1 :which-key "find specific")
+    "f" '(:ignore t :which-key "find")
 
+    "fc" '(:ignore t :which-key "find character")
+    "fca" '(avy-goto-word-0 :which-key "find any")
+    "fcs" '(avy-goto-word-1 :which-key "find specific")
+
+    "fl" '(consult-line :which-key "find line")
+
+    ;; EWW and Elfeed
     "ew" '(:ignore t :which-key "eww")
     "ewo" '(eww-open-in-new-buffer :which-key "eww open")
 
@@ -54,7 +59,7 @@
     
     "ot" '(org-todo :which-key "org todo")
 
-    ;; slime related keys.
+    ;; Sly
     "s" '(:ignore t :which-key "sly")
     "se" '(:ignore t :which-key "sly eval")
     "seb" '(sly-eval-buffer :which-key "sly evaluate buffer")

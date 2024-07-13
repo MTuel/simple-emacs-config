@@ -58,7 +58,10 @@
   ;;       orderless-component-separator #'orderless-escapable-split-on-space)
   (setq completion-styles '(orderless basic)
         completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
+        completion-category-overrides '((file (styles partial-completion))))
+  (setq read-file-name-completion-ignore-case t
+	read-buffer-completion-ignore-case t
+	completion-ignore-case t))
 
 ;; Enable rich annotations using the Marginalia package
 (use-package marginalia
@@ -76,7 +79,7 @@
   ;; package.
   (marginalia-mode))
 
-;;(use-package consult)
+(use-package consult)
 
 ;; WhichKey
 ;; https://github.com/justbur/emacs-which-key

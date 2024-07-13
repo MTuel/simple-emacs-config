@@ -1,71 +1,28 @@
 # Simple Emacs Configuration
 
-This is a basic configuration setup for Emacs. It should work by just cloning the repository into `~/.emacs.d/`
+This is a simple configuration setup for Emacs. It should work by just cloning the repository into `~/.config/emacs/`
 
 If you run into errors downloading the packages, try `M-x package-refresh-contents RET` and `package-install RET *package throwing the error*`
 
-## Useful Resources
+## Main Uses
 
-For Windows:
+This configuration is primarily used for two things:
 
-* Follow [this](https://lucidmanager.org/productivity/emacs-windows/) guide to setup the `HOME` directory and install GNU Emacs.
+### Lisp/Scheme Programming
 
-## Requirements (WIP)
+This is my primary use case. I've tried VS Code and Neovim for this but nothing beats Emacs when it comes to the
+Lisp/Scheme developer experience.
 
-## Packages
+### Documentation
 
-Sorted alphabetically, not in order of importance.
+This is the other reason why I use Emacs. I've also not found anything that comes close to the experience of creating and editing
+documentation and notes like you can in Emacs. Org-mode alone makes it worth it to use emacs.
 
-* [aggressive-indent](https://github.com/Malabarba/aggressive-indent-mode)
+## Requirements
 
-* [avy](https://github.com/abo-abo/avy)
-	
-* [beacon](https://github.com/Malabarba/beacon)
+As far as software goes, this config is pretty self contained. There are some things that would be handy to install like `ripgrep`
+or `hunspell` but they aren't required for you to be able to use the configuration as is.
 
-* [centaur-tabs](https://github.com/ema2159/centaur-tabs)
+<br />
 
-* [cider](https://github.com/clojure-emacs/cider)
-
-* [company](https://company-mode.github.io)
-
-* [dashboard](https://github.com/emacs-dashboard/emacs-dashboard)
-	
-* [display-line-numbers](https://www.emacswiki.org/emacs/LineNumbers)
-	
-* [doom-modeline](https://github.com/doom-modeline)
-
-	- Also [nerd-icons](https://github.com/rainstormstudio/nerd-icons.el) as a dependency for doom-modeline.
-
-* [eglot](https://github.com/joaotavora/eglot)
-
-* [emacs-evil](https://github.com/emacs-evil/evil)
-
-* [evil-collection](https://github.com/emacs-evil/evil-collection)
-
-* [general](https://github.com/notuid/general.el)
-
-* [gruvbox](https://github.com/ninrod/gruvbox-theme)
-
-* [helpful](https://github.com/Wilfred/helpful)
-
-* [ivy, counsel, & swiper](https://github.com/abo-abo/swiper)
-
-* [ivy-rich](https://github.com/Yevgnen/ivy-rich)
-
-* [markdown-mode](https://github.com/jrblevin/markdown-mode)
-
-* [org-appear](https://github.com/awth13/org-appear)
-
-* [org-mode](https://orgmode.com)
-
-* [org-modern](https://github.com/minad/org-modern)
-
-* [org-roam](https://github.com/org-roam/org-roam)
-
-* [rainbow-delimiters](https://github.com/Fanael/rainbow-delimiters)
-
-* [sly](https://github.com/joaotavora/sly)
-	
-* [visual-fill-column](https://github.com/joostkremers/visual-fill-column)
-	
-* [which-key](https://github.com/justbur/emacs-which-key)
+You will need to know your way around modal editing with Vim to get the most out of it.
