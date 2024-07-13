@@ -66,6 +66,13 @@
     (unless (member "CREATED" org-entry-properties)
       (org-set-property "CREATED" (format-time-string "%Y-%m-%d %T")))))
 
+(defun my/set-updated-date-heading-property ()
+  (interactive)
+  (save-excursion
+    (org-back-to-heading)
+    (unless (member "UPDATED" org-entry-properties)
+      (org-set-property "UPDATED" (format-time-string "%Y-%m-%d %T")))))
+
 (use-package org-modern
   :hook
   (org-mode . global-org-modern-mode)

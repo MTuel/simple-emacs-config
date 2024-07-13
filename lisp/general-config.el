@@ -28,7 +28,7 @@
     "fcs" '(avy-goto-word-1 :which-key "find specific")
 
     "fl" '(consult-line :which-key "find line")
-
+    
     ;; EWW and Elfeed
     "ew" '(:ignore t :which-key "eww")
     "ewo" '(eww-open-in-new-buffer :which-key "eww open")
@@ -40,24 +40,36 @@
 
     "oa" '(org-agenda :which-key "org agenda")
 
-    "ol" '(:ignore t :which-key "org link")
-    "ole" '(org-insert-link :which-key "org link external")
-    "oli" '(counsel-org-link :which-key "org link internal")
-
-    "ou" '(:ignore t :which-key "org update")
-    "ous" '(org-update-statistics-cookies :which-key "org update statistics")
-
-    "oo" '(org-open-at-point :which-key "org open at point")
-
     "od" '(:ignore t :which-key "org denote")
     "odo" '(denote-open-or-create :which-key "org denote open")
     "odl" '(denote-link :which-key "org denote link")
     "odr" '(denote-rename-file :which-key "org denote rename")
 
+    "of" '(:ignore t :which-key "org find")
+    "ofh" '(consult-org-heading t :which-key "org find heading")
+
+    "oh" '(:ignore t :which-key "org heading")
+    "ohp" '(:ignore t :which-key "org heading properties")
+    "ohpc" '(my/set-creation-date-heading-property :which-key "org heading properties created")
+    "ohpu" '(my/set-updated-date-heading-property t :which-key "org heading properties updated")
+
+    "ol" '(:ignore t :which-key "org link")
+    "ole" '(org-insert-link :which-key "org link external")
+    
+    "oo" '(org-open-at-point :which-key "org open at point")
+    
     "os" '(:ignore :which-key "org subtree")
     "osa" '(org-archive-subtree :which-key "org subtree archive")
     
     "ot" '(org-todo :which-key "org todo")
+
+    "ou" '(:ignore t :which-key "org update")
+    "ous" '(org-update-statistics-cookies :which-key "org update statistics")
+
+    "ow" '(:ignore :which-key "org web")
+    "owi" '(:ignore :which-key "org web insert")
+    "owie" '(org-web-tools-insert-web-page-as-entry :which-key "org web insert entry")
+    "owil" '(org-web-tools-insert-link-for-url :which-key "org web insert link")
 
     ;; Sly
     "s" '(:ignore t :which-key "sly")
