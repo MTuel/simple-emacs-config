@@ -15,15 +15,20 @@
   (custom/leader-keys
     "rf" '(recentf-open-files :which-key "recentf open files")
 
-    "f" '(:ignore t :which-key "avy")
-    "fa" '(avy-goto-word-0 :which-key "find any")
-    "fs" '(avy-goto-word-1 :which-key "find specific")
-    
     ;; Buffer Manipulation
     "b" '(:ignore t :which-key "buffer")
     "be" '(eval-buffer :which-key "evaluate buffer")
     "bs" '(ido-switch-buffer :which-key "counsel switch buffer")
     "bk" '(kill-buffer :which-key "kill buffer")
+
+    "f" '(:ignore t :which-key "avy")
+    "fa" '(avy-goto-word-0 :which-key "find any")
+    "fs" '(avy-goto-word-1 :which-key "find specific")
+
+    "ew" '(:ignore t :which-key "eww")
+    "ewo" '(eww-open-in-new-buffer :which-key "eww open")
+
+    "el" '(elfeed :which-key "elfeed")
     
     ;; org-mode
     "o" '(:ignore t :which-key "org")
@@ -40,7 +45,7 @@
     "oo" '(org-open-at-point :which-key "org open at point")
 
     "od" '(:ignore t :which-key "org denote")
-    "odc" '(denote-open-or-create :which-key "org denote capture")
+    "odo" '(denote-open-or-create :which-key "org denote open")
     "odl" '(denote-link :which-key "org denote link")
     "odr" '(denote-rename-file :which-key "org denote rename")
 

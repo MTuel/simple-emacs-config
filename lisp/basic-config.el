@@ -40,6 +40,8 @@
 (setq backup-directory-alist '(("." . "~/.config/emacs/backup")))
 (setq auto-save-file-name-transforms '((".*" "~/.config/emacs/autosave" t)))
 
+(setq browse-url-browser-function 'eww)
+
 ;; Enable the hide/show mode for folds.
 (defun custom-hide-all()
   (interactive)
