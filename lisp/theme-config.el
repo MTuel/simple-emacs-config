@@ -79,7 +79,7 @@
 
 ;; Create a custom function to set which modes we do not want to see line numbers in.
 (defcustom display-line-numbers-exempt-modes
-  '(vterm-mode eshell-mode shell-mode term-mode ansi-term-mode org-mode pdf-view-mode)
+  '(vterm-mode eshell-mode shell-mode term-mode ansi-term-mode org-mode pdf-view-mode nov-mode)
   "Major modes on which to disable line numbers."
   :group 'display-line-numbers
   :type 'list

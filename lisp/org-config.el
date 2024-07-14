@@ -16,6 +16,8 @@
   (my/safe-setup-directory "~/Org/")
   (my/safe-setup-directory "~/Org/Pictures")
   (my/safe-setup-directory "~/Org/Denote")
+  (my/safe-setup-directory "~/Org/Denote/Projects")
+  (my/safe-setup-directory "~/Org/Denote/Journal")
   (my/safe-setup-directory "~/Org/Archive")
   (my/safe-setup-file "~/Org/Archive/Archive.org"))
 
@@ -51,13 +53,16 @@
   (setq-default org-todo-keywords
                 '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "SOMEDAY(s)" "|" "DONE(d)" "CANCELLED(c)"))))
 
-(defun my/org-mode-visual-fill ()
+(defun my/visual-fill ()
+  (interactive)
   (setq visual-fill-column-width 100
 	visual-fill-column-center-text t)
   (visual-fill-column-mode 1))
 
 (use-package visual-fill-column
-  :hook (org-mode . my/org-mode-visual-fill))
+  :hook (org-mode . my/visual-fill))
+
+(add-hook 'nov-mode 'my/visual-fill)
 
 (defun my/set-creation-date-heading-property ()
   (interactive)
