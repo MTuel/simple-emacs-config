@@ -21,3 +21,5 @@
   (setq visual-fill-column-center-text t)
   (add-hook 'nov-mode-hook 'visual-line-mode)
   (add-hook 'nov-mode-hook 'visual-fill-column-mode))
+
+(use-package eat)
