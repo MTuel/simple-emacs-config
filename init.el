@@ -1,10 +1,26 @@
 ;; -*- lexical-binding: t; -*-
 
+
+
+
+;;           ███                            ████                                                                                                                     ██████   ███          
+;;          ░░░                            ░░███                                                                                                                    ███░░███ ░░░           
+;;   █████  ████  █████████████   ████████  ░███   ██████              ██████  █████████████    ██████    ██████   █████              ██████   ██████  ████████    ░███ ░░░  ████   ███████
+;;  ███░░  ░░███ ░░███░░███░░███ ░░███░░███ ░███  ███░░███ ██████████ ███░░███░░███░░███░░███  ░░░░░███  ███░░███ ███░░   ██████████ ███░░███ ███░░███░░███░░███  ███████   ░░███  ███░░███
+;; ░░█████  ░███  ░███ ░███ ░███  ░███ ░███ ░███ ░███████ ░░░░░░░░░░ ░███████  ░███ ░███ ░███   ███████ ░███ ░░░ ░░█████ ░░░░░░░░░░ ░███ ░░░ ░███ ░███ ░███ ░███ ░░░███░     ░███ ░███ ░███
+;;  ░░░░███ ░███  ░███ ░███ ░███  ░███ ░███ ░███ ░███░░░             ░███░░░   ░███ ░███ ░███  ███░░███ ░███  ███ ░░░░███           ░███  ███░███ ░███ ░███ ░███   ░███      ░███ ░███ ░███
+;;  ██████  █████ █████░███ █████ ░███████  █████░░██████            ░░██████  █████░███ █████░░████████░░██████  ██████            ░░██████ ░░██████  ████ █████  █████     █████░░███████
+;; ░░░░░░  ░░░░░ ░░░░░ ░░░ ░░░░░  ░███░░░  ░░░░░  ░░░░░░              ░░░░░░  ░░░░░ ░░░ ░░░░░  ░░░░░░░░  ░░░░░░  ░░░░░░              ░░░░░░   ░░░░░░  ░░░░ ░░░░░  ░░░░░     ░░░░░  ░░░░░███
+;;                                ░███                                                                                                                                             ███ ░███
+;;                                █████                                                                                                                                           ░░██████ 
+;;
+
 ;;
 ;;
-;; CONFIGURE LOAD PATH
+;; CONFIGURE LOAD PATH:
 ;;
-;;
+;; Here we add the 'lisp' directory to the load path so all of
+;; our package config files are available for use further down.
 
 (add-to-list 'load-path "~/.config/emacs/lisp/")
 
@@ -12,9 +28,9 @@
 ;;
 ;; PACKAGE MANAGER SETUP
 ;;
-;;
+;; Here we add additional repositories to the package archives list.
 
-;; Set up 'package.el' to work with MELPA, ORG, and ELPA.
+;; Set up 'package.el' to work with MELPA, ORG, ELPA, and NONGNU ELPA.
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("org" . "https://orgmode.org/elpa/")
@@ -37,8 +53,10 @@
 ;;
 ;; PACKAGE CONFIGURATIONS
 ;;
-;;
+;; Here is where we pull in the specific package configs from the
+;; 'lisp' directory we added to the load path.
 
+(require 'custom-commands)
 (require 'basic-config)
 (require 'theme-config)
 (require 'editing-modes)
@@ -54,7 +72,7 @@
 ;;
 ;; CUSTOM VARIABLES
 ;;
-;;
+;; Don't touch these.
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

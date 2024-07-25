@@ -8,6 +8,8 @@
 ;; Each of these is a function, and we pass in the parameter of '-1' to disable them.
 (menu-bar-mode -1)
 
+;; Only try and disable these when running GUI emacs.
+;; Throws an error when running in the terminal.
 (when window-system
   (tool-bar-mode -1)
   (scroll-bar-mode -1))
@@ -31,32 +33,14 @@
 ;; Don't use UI pop ups for prompting.
 (setq use-dialog-box nil)
 
-;; Recent File Mode
 ;; Keeps track of your recent files.
 (recentf-mode 1)
 
-;; Set backup files to be stored in a separate directory.
-;; Do this so the directories you work in don't get cluttered with backup files.
+;; Set backup and autosave files to be stored in a separate directory.
+;; Do this so the directories you work in don't get cluttered with backup and autosave files.
 (setq backup-directory-alist '(("." . "~/.config/emacs/backup")))
 (setq auto-save-file-name-transforms '((".*" "~/.config/emacs/autosave" t)))
 
+;; This sets URLs to open in eww instead of the OS's default browser. 
 (setq browse-url-browser-function 'eww)
 
-;; Enable the hide/show mode for folds.
-(defun custom-hide-all()
-  (interactive)
-  (hs-minor-mode)
-  (hs-hide-all))
-
-;;(add-hook 'prog-mode-hook 'custom-hide-all)
-
-;; Easy command to kill all other buffers.
-(defun kill-other-buffers ()
-  "kill all other buffers except for the defaults."
-  (interactive)
-  (mapc 'kill-buffer (delq (current-buffer)
-			   (delq (get-buffer "*Messages*")
-				 (delq (get-buffer "*dashboard*")
-				       (delq (get-buffer "*scratch*")
-					     (delq (get-buffer "*Warnings*")
-						   (buffer-list))))))))
