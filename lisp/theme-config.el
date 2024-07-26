@@ -1,35 +1,41 @@
 (provide 'theme-config)
 
-;; Gruvbox for change of pace every now and then.
-;; https://github.com/greduan/emacs-theme-gruvbox
-;;(use-package gruvbox-theme
-;;  :init
-;;  (load-theme 'gruvbox :no-confirm))
-
-;; OneDark Theme
-
+;; https://github.com/jonathanchu/atom-one-dark-theme
 (when window-system
   (use-package atom-one-dark-theme
     :init
     (load-theme 'atom-one-dark :no-confirm)))
 
-;; Nerd Icons
-;; https://github.com/rainstormstudio/nerd-icons.el#installing-fonts
-;;
+;; Use the custom function to load the font.
+(simple-configure-custom-font)
+
 ;; NOTE: You will need to run 'M-x nerd-icons-install-fonts' and then manually install the
 ;; downloaded font on Windows.
+;; https://github.com/rainstormstudio/nerd-icons.el#installing-fonts
 (use-package nerd-icons)
 
+;; nerd-icons support for Corfu.
+;; https://github.com/LuigiPiucco/nerd-icons-corfu
+(use-package nerd-icons-corfu
+  :after
+  (corfu)
+  :init
+  (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
+
+;; https://github.com/domtronn/all-the-icons.el
 (use-package all-the-icons
   :if (display-graphic-p))
 
-;; Doom Modeline for a cleaner modeline.
+;; This adds all-the-icons support to dired.
+;; https://github.com/jtbm37/all-the-icons-dired
+(use-package all-the-icons-dired
+  :hook (dired-mode . all-the-icons-dired-mode))
+
 ;; https://github.com/seagle0128/doom-modeline
 (use-package doom-modeline
   :init
   (doom-modeline-mode 1))
 
-;; Dashboard
 ;; https://github.com/emacs-dashboard/emacs-dashboard
 (use-package dashboard
   :ensure t
@@ -40,46 +46,34 @@
 
 (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
 
-;; Rainbow Delimiters for colored braces.
+;; Rainbow Delimiters for .
 ;; https://github.com/Fanael/rainbow-delimiters
 ;;
-;; This is a must have for Lisp programming.
+;; Colored braces and parentheses. This is a must have for Lisp programming.
 (use-package rainbow-delimiters
   :hook
   (prog-mode . rainbow-delimiters-mode))
 
-;; Beacon
-;; https://github.com/Malabarba/beacon
-;;
 ;; Highlights the cursor as you jump through or between windows/buffers.
+;; https://github.com/Malabarba/beacon
 (use-package beacon
   :init
   (beacon-mode 1))
-
-(simple-configure-custom-font)
 
 ;; Set line numbers to display.
 ;; https://www.emacswiki.org/emacs/LineNumbers
 (require 'display-line-numbers)
 
-;; Create a custom function to set which modes we do not want to see line numbers in.
-(defcustom display-line-numbers-exempt-modes
-  '(vterm-mode eshell-mode shell-mode term-mode ansi-term-mode org-mode pdf-view-mode nov-mode)
-  "Major modes on which to disable line numbers."
-  :group 'display-line-numbers
-  :type 'list
-  :version "green")
+(simple-display-line-numbers--turn-on)
 
-(defun display-line-numbers--turn-on ()
-  "Turn on line numbers except for certain major modes.
-Exempt major modes are defined in `display-line-numbers-exempt-modes'."
-  (unless (or (minibufferp)
-              (member major-mode display-line-numbers-exempt-modes))
-    (display-line-numbers-mode)))
+(use-package visual-fill-column
+  :hook
+  (org-mode . simple-visual-fill)
+  (nov-mode . simple-visual-fill))
 
-(global-display-line-numbers-mode)
+;;(add-hook 'nov-mode 'simple-visual-fill)
 
-;; hl-todo
+;; Highlights specific keywords in comments.
 ;; https://github.com/tarsius/hl-todo?tab=readme-ov-file
 (use-package hl-todo
   :init

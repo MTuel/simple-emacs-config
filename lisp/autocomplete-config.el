@@ -1,40 +1,25 @@
 (provide 'autocomplete-config)
 
-;; Enable vertico
+;; Vertico
+;; https://github.com/minad/vertico/blob/main/vertico.el
+;;
+;; Vertico is used for minibuffer completion UI.
 (use-package vertico
   :init
-  (vertico-mode)
-
-  ;; Different scroll margin
-  ;; (setq vertico-scroll-margin 0)
-
-  ;; Show more candidates
-  ;; (setq vertico-count 20)
-
-  ;; Grow and shrink the Vertico minibuffer
-  ;; (setq vertico-resize t)
-
-  ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
-  ;; (setq vertico-cycle t)
-  )
+  (vertico-mode))
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
   :init
   (savehist-mode))
 
+;; Corfu
+;; https://github.com/minad/corfu
+;;
+;; Corfu is used for in-buffer completion UI.
 (use-package corfu
-  ;; Optional customizations
   :custom
-  ;; (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
-  (corfu-auto t)                 ;; Enable auto completion
-  ;; (corfu-separator ?\s)          ;; Orderless field separator
-  ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
-  ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
-  ;; (corfu-preview-current nil)    ;; Disable current candidate preview
-  ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
-  ;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches
-  ;; (corfu-scroll-margin 5)        ;; Use scroll margin
+  (corfu-auto t)
 
   ;; Recommended: Enable Corfu globally.  This is recommended since Dabbrev can
   ;; be used globally (M-/).  See also the customization variable
@@ -43,11 +28,50 @@
   (global-corfu-mode)
   (corfu-popupinfo-mode))
 
-(use-package nerd-icons-corfu
+;; Orderless
+;; https://github.com/oantolin/orderless
+;;
+;; Orderless lets you search commands in the minibuffer with the name out of order.
+;; i.e. searching "buffer kill" will show "kill-buffer" as a valid option.
+(use-package orderless
   :init
-  (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion))))
+  (setq read-file-name-completion-ignore-case t
+	read-buffer-completion-ignore-case t
+	completion-ignore-case t))
 
-;; A few more useful configurations...
+;; Marginalia
+;; https://github.com/minad/marginalia
+;;
+;; Adds additional context to minibuffer items.
+(use-package marginalia
+  ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
+  ;; available in the *Completions* buffer, add it to the
+  ;; `completion-list-mode-map'.
+  :bind (:map minibuffer-local-map
+              ("M-A" . marginalia-cycle))
+
+  :init
+  (marginalia-mode))
+
+;; Consult
+;; https://github.com/minad/consult
+;;
+;; Provides all sorts of completion functions.
+(use-package consult)
+
+;; WhichKey
+;; https://github.com/justbur/emacs-which-key
+;;
+;; Help menu that displays possible completions for keybinds.
+(use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config (setq which-key-idle-delay 0.3))
+
+;; A few more useful configurations for completion.
 (use-package emacs
   :init
   ;; Add prompt indicator to `completing-read-multiple'.
@@ -84,48 +108,3 @@
   ;; setting is useful beyond Corfu.
   (read-extended-command-predicate #'command-completion-default-include-p))
 
-;; Optionally use the `orderless' completion style.
-(use-package orderless
-  :init
-  ;; Configure a custom style dispatcher (see the Consult wiki)
-  ;; (setq orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch)
-  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
-  (setq completion-styles '(orderless basic)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion))))
-  (setq read-file-name-completion-ignore-case t
-	read-buffer-completion-ignore-case t
-	completion-ignore-case t))
-
-;; Enable rich annotations using the Marginalia package
-(use-package marginalia
-  ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
-  ;; available in the *Completions* buffer, add it to the
-  ;; `completion-list-mode-map'.
-  :bind (:map minibuffer-local-map
-              ("M-A" . marginalia-cycle))
-
-  ;; The :init section is always executed.
-  :init
-
-  ;; Marginalia must be activated in the :init section of use-package such that
-  ;; the mode gets enabled right away. Note that this forces loading the
-  ;; package.
-  (marginalia-mode))
-
-(use-package consult)
-
-;; WhichKey
-;; https://github.com/justbur/emacs-which-key
-;;
-;; Help menu that displays possible completions for keybinds.
-(use-package which-key
-  :init (which-key-mode)
-  :diminish which-key-mode
-  :config (setq which-key-idle-delay 0.3))
-
-;; Aggressive Indent
-;; https://github.com/Malabarba/aggressive-indent-mode
-(use-package aggressive-indent
-  :init
-  (global-aggressive-indent-mode))

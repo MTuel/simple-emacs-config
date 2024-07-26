@@ -1,4 +1,26 @@
-(provide 'general-config)
+(provide 'keys-config)
+
+;; Evil for VIM keybindings.
+;; https://github.com/emacs-evil/evil
+(use-package evil
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  (setq evil-respect-visual-line-mode t)
+  (setq evil-undo-system 'undo-redo)
+  (setq evil-want-C-i-jump nil)
+
+  :config
+  (evil-mode 1)
+  (evil-ex-define-cmd "W" "w")
+  (evil-ex-define-cmd "Q" "q"))
+
+;; Additional keybindings for evil.
+;; https://github.com/emacs-evil/evil-collection
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
 
 ;; General
 ;; https://github.com/noctuid/general.el
@@ -33,8 +55,6 @@
     "ew" '(:ignore t :which-key "eww")
     "ewo" '(eww-open-in-new-buffer :which-key "eww open")
 
-    "el" '(elfeed :which-key "elfeed")
-    
     ;; org-mode
     "o" '(:ignore t :which-key "org")
 
@@ -101,15 +121,4 @@
   (general-imap "C-g" 'evil-normal-state)
   (general-vmap "C-g" 'evil-normal-state)
 
-  (general-vmap "<SPC>/" 'comment-or-uncomment-region)
-
-  ;; (general-vmap "j"
-  ;;   (general-key-dispatch 'self-insert-command
-  ;;     :timeout 0.25
-  ;;     "k" 'evil-normal-state))
-
-  ;; (general-vmap "k"
-  ;;   (general-key-dispatch 'self-insert-command
-  ;;     :timeout 0.25
-  ;;     "k" 'evil-normal-state))
-  )
+  (general-vmap "<SPC>/" 'comment-or-uncomment-region))
