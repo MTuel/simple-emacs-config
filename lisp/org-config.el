@@ -22,7 +22,7 @@
 
   :config
   (setq org-default-notes-file "~/Org/Notes.org")
-  (setq org-agenda-files '("~/Org/" "~/Org/Denote/" "~/Org/Denote/Projects/"))
+  (setq org-agenda-files (directory-files-recursively "~/Org/Denote/Projects/" "\\.org$"))
   (setq org-archive-location "~/Org/Archive/%s_archive::")
   (setq org-agenda-start-with-log-mode t)
   (setq org-log-done 'time)

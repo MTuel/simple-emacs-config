@@ -78,7 +78,6 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("61526419f6ffee91cae16a75bfc0f39f7e9621280cc405edeae15699091e7c73" "d445c7b530713eac282ecdeea07a8fa59692c83045bf84dd112dd738c7bcad1d" default))
- '(org-agenda-files nil)
  '(package-selected-packages
    '(elfeed-org nerd-icons-corfu eat consult denote org-download org-ql dired-preview marginalia nov pdf-tools magit typo keycast keycast-mode speed-type dired-hide-dotfiles all-the-icons-dired dired-single elfeed-goodies elfeed org-web-tools hl-todo corfu orderless vertico atom-one-dark-theme org-preview-html org-html-preview web-mode markdown-mode aggressive-indent parinfer-rust-mode paredit cider centaur-tabs org-roam-ui websocket htmlize weblorg eglot company gruvbox-theme dashboard visual-fill-column evil-collection general counsel ivy-rich which-key rainbow-delimiters beacon doom-modeline ivy evil-mode evil)))
 (custom-set-faces
