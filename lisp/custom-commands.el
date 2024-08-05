@@ -23,7 +23,7 @@
 (defun simple-configure-custom-font ()
   "Set the font if it exists, otherwise ignore."
   (condition-case nil
-      (setq default-frame-alist '((font . "CaskaydiaCove NF 10")))
+      (setq default-frame-alist '((font . "CaskaydiaCove NF 14")))
     (error nil))
   (set-face-attribute 'italic nil :slant 'italic :underline 'unspecified))
 
@@ -102,3 +102,4 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
   (setq visual-fill-column-width 100
 	visual-fill-column-center-text t)
   (visual-fill-column-mode 1))
+
