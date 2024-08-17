@@ -3,7 +3,7 @@
 ;; https://github.com/jonathanchu/atom-one-dark-theme
 (use-package atom-one-dark-theme
   :init
-  (load-theme 'atom-one-dark :no-confirm)))
+  (load-theme 'atom-one-dark :no-confirm))
 
 ;; Use the custom function to load the font.
 (simple-configure-custom-font)
