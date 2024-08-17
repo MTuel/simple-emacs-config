@@ -1,10 +1,9 @@
 (provide 'theme-config)
 
 ;; https://github.com/jonathanchu/atom-one-dark-theme
-(when (not (getenv "BOOX"))
-  (use-package atom-one-dark-theme
-    :init
-    (load-theme 'atom-one-dark :no-confirm)))
+(use-package atom-one-dark-theme
+  :init
+  (load-theme 'atom-one-dark :no-confirm)))
 
 ;; Use the custom function to load the font.
 (simple-configure-custom-font)
