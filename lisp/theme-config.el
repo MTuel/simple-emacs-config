@@ -1,7 +1,7 @@
 (provide 'theme-config)
 
 ;; https://github.com/jonathanchu/atom-one-dark-theme
-(when window-system
+(when (not (getenv "BOOX"))
   (use-package atom-one-dark-theme
     :init
     (load-theme 'atom-one-dark :no-confirm)))
