@@ -8,6 +8,9 @@
 ;; Use the custom function to load the font.
 (simple-configure-custom-font)
 
+;; Enable the tab bar at the top of the frame.
+(tab-bar-mode 1)
+
 ;; NOTE: You will need to run 'M-x nerd-icons-install-fonts' and then manually install the
 ;; downloaded font on Windows.
 ;; https://github.com/rainstormstudio/nerd-icons.el#installing-fonts
@@ -62,8 +65,12 @@
 ;; Set line numbers to display.
 ;; https://www.emacswiki.org/emacs/LineNumbers
 (require 'display-line-numbers)
+(global-display-line-numbers-mode 1)
 
-(simple-display-line-numbers--turn-on)
+(dolist (mode '(org-mode-hook
+                term-mode-hook
+                eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (use-package visual-fill-column
   :hook
