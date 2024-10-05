@@ -8,6 +8,9 @@
 ;; Each of these is a function, and we pass in the parameter of '-1' to disable them.
 (menu-bar-mode -1)
 
+;; Minor mode for managing windows.
+(winner-mode 1)
+
 ;; Only try and disable these when running GUI emacs.
 ;; Throws an error when running in the terminal.
 (when window-system
