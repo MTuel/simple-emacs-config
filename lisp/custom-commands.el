@@ -23,7 +23,7 @@
 (defun simple-configure-custom-font ()
   "Set the font if it exists, otherwise ignore."
   (condition-case nil
-      (setq default-frame-alist '((font . "CaskaydiaCove NF 14")))
+      (setq default-frame-alist '((font . "CaskaydiaCove NF 12")))
     (error nil))
   (set-face-attribute 'italic nil :slant 'italic :underline 'unspecified))
 

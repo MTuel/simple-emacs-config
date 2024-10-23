@@ -22,6 +22,7 @@
 ;; Here we add the 'lisp' directory to the load path so all of
 ;; our package config files are available for use further down.
 (add-to-list 'load-path "~/.config/emacs/lisp/")
+(add-to-list 'load-path "~/.elfeed/")
 
 ;;
 ;;
@@ -64,6 +65,11 @@
 (require 'org-config)
 (require 'spellcheck-config)
 (require 'miscellaneous-package-configs)
+
+;; Only load Elfeed config from  ~/.elfeed if it exists.
+(condition-case nil
+    (require 'elfeed-config)
+  (error nil))
 
 ;;
 ;;
