@@ -21,6 +21,7 @@
 		(flyspell-mode 1)))
 
   :config
+  (setq org-directory "~/Org/")
   (setq org-default-notes-file "~/Org/Notes.org")
   (setq org-agenda-files (directory-files-recursively "~/Org/Denote/Projects/" "\\.org$"))
   (setq org-archive-location "~/Org/Archive/%s_archive::")
@@ -31,7 +32,7 @@
   (setq org-export-with-section-numbers nil)
   (setq org-export-with-tags nil)
   (setq-default org-todo-keywords
-                '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "SOMEDAY(s)" "|" "DONE(d)" "CANCELLED(c)"))))
+		'((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "SOMEDAY(s)" "|" "DONE(d)" "CANCELLED(c)"))))
 
 ;; Better theme for org-mode.
 ;; https://github.com/minad/org-modern

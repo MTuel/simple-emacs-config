@@ -5,7 +5,7 @@
 ;; https://github.com/joaotavora/sly
 (use-package sly
   :init
-  (setq inferior-lisp-program "ros -Q run"))
+  (setq inferior-lisp-program "ros run"))
 
 ;; Provides a better lisp editing experience by
 ;; helping keep indenation in line.

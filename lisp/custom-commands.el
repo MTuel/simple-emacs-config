@@ -103,3 +103,23 @@ Exempt major modes are defined in `display-line-numbers-exempt-modes'."
 	visual-fill-column-center-text t)
   (visual-fill-column-mode 1))
 
+(defun simple-toggle-window-dedication ()
+  "Toggles window dedication in the selected window."
+  (interactive)
+  (set-window-dedicated-p (selected-window)
+			  (not (window-dedicated-p (selected-window)))))
+
+(defun simple-reset-window-state ()
+  "Reset the selected window's state."
+  (interactive)
+  (set-frame-parameter (selected-frame) 'window-state nil))
+
+(add-to-list 'display-buffer-alist
+             '((or (major-mode . Info-mode)
+                   (major-mode . help-mode)
+		   (major-mode . sly-mrepl-mode))
+               (display-buffer-reuse-window
+		display-buffer-in-side-window)
+               (reusable-frames . visible)
+               (side . right)
+               (window-width . 0.33)))
