@@ -62,22 +62,17 @@
   :init
   (beacon-mode 1))
 
-;; Set line numbers to display.
-;; https://www.emacswiki.org/emacs/LineNumbers
-(require 'display-line-numbers)
-(global-display-line-numbers-mode 1)
-
-(dolist (mode '(org-mode-hook
-                term-mode-hook
-                eshell-mode-hook))
-  (add-hook mode (lambda () (display-line-numbers-mode 0))))
-
 (use-package visual-fill-column
   :hook
   (org-mode . simple-visual-fill)
-  (nov-mode . simple-visual-fill))
+  (nov-mode . simple-visual-fill)
+  (eww-mode . simple-visual-fill))
 
-;;(add-hook 'nov-mode 'simple-visual-fill)
+;; Set line numbers to display.
+;; https://www.emacswiki.org/emacs/LineNumbers
+;;(require 'display-line-number)
+;;(add-hook (prog-mode . display-line-numbers-mode))
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
 ;; Highlights specific keywords in comments.
 ;; https://github.com/tarsius/hl-todo?tab=readme-ov-file
