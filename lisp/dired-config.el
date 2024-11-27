@@ -20,9 +20,6 @@
   (evil-collection-define-key 'normal 'dired-mode-map
     "H" 'dired-hide-dotfiles-mode))
 
-;;https://github.com/crocket/dired-single
-(use-package dired-single)
-
 ;; https://github.com/protesilaos/dired-preview
 (use-package dired-preview
   :config
