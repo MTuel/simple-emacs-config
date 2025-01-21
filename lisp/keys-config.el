@@ -55,6 +55,17 @@
     "ew" '(:ignore t :which-key "eww")
     "ewo" '(eww-open-in-new-buffer :which-key "eww open")
 
+    ;; Navigation
+    "n" '(:ignore t :which-key "navigate")
+
+    ;; Error
+    "ne" '(next-error :which-key "navigate error next")
+    "nE" '(previous-error :which-key "navigate error prev")
+
+    ;; Todo
+    "nt" '(hl-todo-next :which-key "navigate todo next")
+    "nT" '(hl-todo-previous :which-key "navigate todo prev")
+
     ;; org-mode
     "o" '(:ignore t :which-key "org")
 

@@ -2,15 +2,15 @@
 
 ;; ispell/hunspell for spellcheck.
 
-(setq ispell-program-name "/usr/local/Cellar/ispell/3.4.06/bin/ispell")
+(setq ispell-program-name "/usr/bin/ispell")
 
-      (setq ispell-dictionary "english")
-(setq ispell-local-dictionary-alist `(("english"
+      (setq ispell-dictionary "american")
+(setq ispell-local-dictionary-alist `(("american"
 				       "[[:alpha:]]"
 				       "[^[:alpha:]]"
 				       "[']"
 				       t
-				       ("-d" "english")
+				       ("-B")
 				       nil
 				       utf-8)))
 

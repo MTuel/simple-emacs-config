@@ -18,6 +18,7 @@
 		(setq evil-auto-indent nil)
 		(setq org-hide-emphasis-markers t)
 		(setq org-log-into-drawer t)
+		(setq org-src-fontify-natively t)
 		(flyspell-mode 1)))
 
   :config
