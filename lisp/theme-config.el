@@ -65,6 +65,7 @@
 (use-package visual-fill-column
   :hook
   (org-mode . simple-visual-fill)
+  (markdown-mode . simple-visual-fill)
   (nov-mode . simple-visual-fill)
   (eww-mode . simple-visual-fill))
 
